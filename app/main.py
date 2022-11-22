@@ -10,9 +10,10 @@ async def main():
         page = await browser.new_page()
         url = f"https://www.tradingview.com/heatmap/stock/?color=change&dataset={ticker}&group=sector&size=market_cap_basic&theme=dark"
         await page.goto(url, wait_until="networkidle") # Wait for most background tasks to be done
-        #x_button = await page.query_selector(".tv-dialog__close")
-        #if x_button is not None:
-        #    await x_button.click()
+        x_button = await page.query_selector(".tv-dialog__close")
+        if x_button is not None:
+            await x_button.click()
+        await page.screenshot(path=f"test.png")
         heatmap_top_bar = await page.query_selector('div[class^="heatmapTopBar"]')
         heatmap = await page.query_selector("canvas")
         full_box = bar_box = await heatmap_top_bar.bounding_box()
