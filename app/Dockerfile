@@ -8,4 +8,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Install playwright dependencies
-RUN playwright install
+RUN python -m playwright install
