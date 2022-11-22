@@ -13,7 +13,7 @@ async def main():
         x_button = await page.query_selector(".tv-dialog__close")
         if x_button is not None:
             await x_button.click()
-        await page.screenshot(path=f"test.png")
+        await asyncio.sleep(0.5) # Wait for the dialog to close
         heatmap_top_bar = await page.query_selector('div[class^="heatmapTopBar"]')
         heatmap = await page.query_selector("canvas")
         full_box = bar_box = await heatmap_top_bar.bounding_box()
