@@ -9,6 +9,3 @@ RUN pip install -r requirements.txt
 
 # Install playwright dependencies
 RUN playwright install
-
-# Run the app
-CMD python -u main.py

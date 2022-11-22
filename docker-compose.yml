@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  app:
+    container_name: app
+    build: ./app
+    command: python -u app.py
