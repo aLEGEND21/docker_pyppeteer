@@ -9,3 +9,4 @@ RUN pip install -r requirements.txt
 
 # Install playwright dependencies
 RUN playwright install
+RUN playwright install-deps
